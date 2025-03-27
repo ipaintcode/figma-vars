@@ -1,0 +1,49 @@
+{
+  "name": "@ipaintcode/figma-vars-hooks",
+  "description": "A React hooks library for integrating and managing Figma Variables in your React and React-Native application.",
+  "private": false,
+  "version": "0.0.6",
+  "type": "module",
+  "keywords": [
+    "figma",
+    "react",
+    "react-native",
+    "react-hooks",
+    "design-system",
+    "figma-api",
+    "variables",
+    "design-tokens",
+    "figma-plugin",
+    "figma-variables",
+    "figma-integration",
+    "style-guide",
+    "ui-components"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "test-off": "jest",
+    "prepare": "npm run lint && npm run build",
+    "prepublishOnly": "npm run prepare",
+    "release": "npm version patch && npm publish"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.0"
+  }
+}
