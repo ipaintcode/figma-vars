@@ -2,7 +2,7 @@
 
 Welcome to FigmaVarsHooks, a React hooks library designed to simplify the integration of Figma variables into your React applications.
 
-Please visit [https://figmavars.com](FigmaVars)
+Please visit [FigmaVars](https://figmavars.com) 
 
 ## Installation
 
