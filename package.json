@@ -1,9 +1,10 @@
 {
   "name": "@ipaintcode/figma-vars-hooks",
   "description": "A React hooks library for integrating and managing Figma Variables in your React and React-Native application.",
-  "private": false,
+  "private": true,
   "version": "0.0.6",
   "type": "module",
+  "license": "MIT",
   "keywords": [
     "figma",
     "react",
