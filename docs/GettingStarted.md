@@ -7,9 +7,9 @@ Welcome to FigmaVarsHooks, a React hooks library designed to simplify the integr
 To get started, install FigmaVarsHooks via npm or yarn:
 
 ```bash
-npm install @ipaintcode/figma-vars-hooks
+npm install figmavars
 # or
-yarn add @ipaintcode/figma-vars-hooks
+yarn add figmavars
 ```
 
 ## Setup
