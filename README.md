@@ -1,12 +1,12 @@
-# Getting Started with FigmaVarsHooks
+# Getting Started with FigmaVars
 
-Welcome to FigmaVarsHooks, a React hooks library designed to simplify the integration of Figma variables into your React applications.
+Welcome to FigmaVars, a React hooks library designed to simplify the integration of Figma variables into your React applications.
 
 [FigmaVars dot com](https://figmavars.com)
 
 ## Installation
 
-To get started, install FigmaVarsHooks via npm or yarn:
+To get started, install FigmaVars via npm or yarn:
 
 ```bash
 npm install figmavars
@@ -16,7 +16,7 @@ yarn add figmavars
 
 ## Setup
 
-Before using the hooks, you need to configure your Figma API token. Store your token securely and make it available in your application, preferably through environment variables.
+Before using the hooks, you need to configure your Figma API token. You can store your token securely and make it available in your application, preferably through environment variables.
 
 Create a `.env` file in the root of your project and add:
 
@@ -24,7 +24,7 @@ Create a `.env` file in the root of your project and add:
 REACT_APP_FIGMA_TOKEN=your_figma_api_token_here
 ```
 
-Ensure you have .env in your .gitignore file to keep your token secure.
+Please ensure you have .env in your .gitignore file to secure your token.
 
 ## Basic Usage
 
@@ -41,7 +41,7 @@ interface FigmaVariable {
   value: string; // Adjust the type according to what `value` can be
 }
 
-const App: React.FC = () => {
+Const App: React.FC = () => {
   // Here we're assuming `useFigmaVars` returns an object with data, loading, and error properties
   // Adjust the type of `data` based on the actual structure of variables you expect
   const { data: variables, loading, error } = useFigmaVars('file_key_here');
@@ -68,7 +68,7 @@ export default App;
 
 ## Next Steps
 
-Explore the other hooks provided by FigmaVarsHooks to fully leverage Figma variables in your project. For detailed API documentation, please refer to APIReference.md.
+You can thoroughly explore the other hooks provided by FigmaVars to leverage Figma variables in your project. For detailed API documentation, please take a look at APIReference.md.
 
 ## React + TypeScript + Vite
 
@@ -81,7 +81,7 @@ Currently, two official plugins are available:
 
 ## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
 - Configure the top-level `parserOptions` property like this:
 
