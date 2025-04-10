@@ -1,18 +1,99 @@
-# Getting Started with FigmaVars
+# Figma Variables Package
+
+A modern, modular library for working with Figma variables.
+
+## Features
+
+- 🚀 Modern ESM modules with TypeScript support
+- 📦 Monorepo structure for clean separation of concerns
+- 🔄 Full TypeScript declarations for type safety
+- 🌳 Tree-shakable exports for smaller bundle sizes
+- 🧩 Modular packages for different environments (Core, React, React Native)
+
+## Packages
+
+This repository is a monorepo that contains the following packages:
+
+- `@figma-vars/core` - Core functionality for working with Figma variables
+- `@figma-vars/plugin` - Figma plugin integration components
+- `@figma-vars/react` - React components and hooks for Figma variables
+- `@figma-vars/react-native` - React Native components for Figma variables
+
+## Requirements
+
+- Node.js 16+
+- pnpm 7+
+
+## Installation
+
+```bash
+# Install dependencies
+pnpm install
+
+# Build all packages
+pnpm build
+```
+
+## Development
+
+```bash
+# Watch for changes and rebuild
+pnpm dev
+
+# Run type checking
+pnpm typecheck
+
+# Clean build artifacts
+pnpm clean
+```
+
+## Usage
+
+### Core Package
+
+```js
+import { FigmaClient, findVariableById } from '@figma-vars/core';
+
+// Create a client
+const client = new FigmaClient('your-figma-token');
+
+// Get variables from a file
+const variables = await client.getFileVariables('file-key');
+
+// Find a specific variable
+const variable = findVariableById(variables, 'variable-id');
+```
+
+### React Package
+
+```jsx
+import { useFigmaVariables } from '@figma-vars/react';
+
+function App() {
+  const { variables, loading, error } = useFigmaVariables('file-key', 'your-figma-token');
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
+  return (
+    <div>
+      {variables.map(variable => (
+        <div key={variable.id}>{variable.name}</div>
+      ))}
+    </div>
+  );
+}
+```
+
+## License
+
+MIT
+
+## Getting Started with FigmaVars
 
 Welcome to FigmaVars, a React hooks library designed to simplify the integration of Figma variables into your React applications.
 
 [FigmaVars dot com](https://figmavars.com)
-
-## Installation
-
-To get started, install FigmaVars via npm or yarn:
-
-```bash
-npm install figmavars
-# or
-yarn add figmavars
-```
 
 ## Setup
 
