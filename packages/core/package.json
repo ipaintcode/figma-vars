@@ -1,6 +1,6 @@
 {
   "name": "@figma-vars/core",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "type": "module",
   "description": "Core functionality for working with Figma variables",
   "main": "./dist/index.js",

@@ -1,7 +1,8 @@
 {
   "name": "@figma-vars/plugin",
-  "version": "0.1.0",
-  "description": "Figma Variables Plugin",
+  "version": "0.1.2",
+  "type": "module",
+  "description": "Figma plugin for working with variables",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -9,8 +10,7 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "default": "./dist/index.js"
+      "require": "./dist/index.js"
     }
   },
   "sideEffects": false,
@@ -19,48 +19,44 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "rimraf dist && tsup",
     "dev": "tsup --watch",
+    "build": "rimraf dist && tsc --outDir dist/types --declaration --emitDeclarationOnly && tsup",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "lint": "eslint \"src/**/*.ts*\"",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "@figma-vars/core": "workspace:*"
-  },
-  "peerDependencies": {
-    "react": "^18.0.0 || ^19.0.0",
-    "react-dom": "^18.0.0 || ^19.0.0"
+    "@figma-vars/core": "^0.1.2"
   },
   "devDependencies": {
     "@figma/plugin-typings": "^1.82.0",
-    "@types/node": "^20.11.30",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
+    "@types/node": "^22.14.0",
+    "@vitest/coverage-v8": "^1.6.1",
     "eslint": "^8.54.0",
     "rimraf": "^5.0.5",
     "tsup": "^8.0.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.8.3",
+    "vitest": "^1.6.1"
   },
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/figma-vars.git",
+    "url": "git@github.com:ipaintcode/figma-vars.git",
     "directory": "packages/plugin"
   },
   "keywords": [
     "figma",
     "variables",
     "plugin",
-    "widget",
+    "design",
     "design-system",
+    "tokens",
     "design-tokens"
-  ],
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not op_mini all"
   ]
 }

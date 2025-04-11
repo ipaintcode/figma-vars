@@ -1,15 +1,16 @@
 {
   "name": "@figma-vars/react",
-  "version": "0.1.0",
-  "description": "React components and hooks for Figma Variables",
+  "version": "0.1.2",
+  "type": "module",
+  "description": "React components for working with Figma variables",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     }
   },
   "sideEffects": false,
@@ -18,44 +19,49 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "rimraf dist && tsup src/index.ts --format esm,cjs --dts",
-    "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
+    "dev": "tsup --watch",
+    "build": "rimraf dist && tsc --outDir dist/types --declaration --emitDeclarationOnly && tsup",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "lint": "eslint \"src/**/*.ts*\"",
-    "typecheck": "tsc --noEmit"
-  },
-  "peerDependencies": {
-    "react": "^18.0.0 || ^19.0.0"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "@figma-vars/core": "workspace:*"
+    "@figma-vars/core": "^0.1.2",
+    "react": "^18.2.0"
   },
   "devDependencies": {
-    "@types/react": "^19.0.0",
+    "@types/node": "^22.14.0",
+    "@types/react": "^18.2.0",
+    "@vitest/coverage-v8": "^1.6.1",
     "eslint": "^8.54.0",
     "rimraf": "^5.0.5",
     "tsup": "^8.0.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.8.3",
+    "vitest": "^1.6.1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
   },
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/figma-vars.git",
+    "url": "git@github.com:ipaintcode/figma-vars.git",
     "directory": "packages/react"
   },
   "keywords": [
     "figma",
     "variables",
     "react",
-    "hooks",
+    "components",
+    "design",
     "design-system",
+    "tokens",
     "design-tokens"
-  ],
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not op_mini all"
   ]
 }

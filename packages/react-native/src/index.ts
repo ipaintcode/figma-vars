@@ -1,12 +1,9 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import type { ReactNode } from 'react';
-// Import only the types and classes we know exist
 import { FigmaClient } from '@figma-vars/core';
 import type { Variable } from '@figma-vars/core';
-// Temporarily use a local definition until build issues are resolved
-// import { FigmaVars } from '@figma-vars/core';
 
-// Temporary local class to avoid import errors
+// Local definition of FigmaVars until build issues are resolved
 class FigmaVars {
   private variables: Variable[];
 
@@ -44,7 +41,7 @@ export interface UseFigmaVariablesResult {
 }
 
 /**
- * React hook for fetching Figma variables with security best practices
+ * React Native hook for fetching Figma variables with security best practices
  *
  * ⚠️ SECURITY WARNING: Never use client-side environment variables for API tokens.
  * Always use a secure backend proxy for production applications.
@@ -54,7 +51,7 @@ export interface UseFigmaVariablesResult {
  * const { variables, loading, error } = useFigmaVariables('your_file_key', {
  *   tokenProvider: async () => {
  *     // Call your backend API that securely handles authentication
- *     const response = await fetch('/api/figma/token');
+ *     const response = await fetch('https://your-api.com/figma/token');
  *     const data = await response.json();
  *     return data.token;
  *   }
@@ -77,9 +74,9 @@ export function useFigmaVariables(
       try {
         // Security check for client-side token exposure
         if (
-          typeof window !== 'undefined' &&
+          typeof global !== 'undefined' &&
           (!options?.tokenProvider) &&
-          (process.env.VITE_FIGMA_TOKEN || process.env.REACT_APP_FIGMA_TOKEN)
+          (process.env.FIGMA_API_TOKEN || process.env.REACT_APP_FIGMA_TOKEN)
         ) {
           console.error(
             '⚠️ SECURITY VULNERABILITY DETECTED: You are exposing your Figma API token in client-side code. ' +
@@ -139,6 +136,5 @@ export function useFigmaVars() {
   return context.figmaVars;
 }
 
-// Export the FigmaVars class - temporarily commented out until build issues are resolved
-// export { FigmaVars } from '@figma-vars/core';
+// Export the FigmaVars class
 export { FigmaVars };

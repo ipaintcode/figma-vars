@@ -1,11 +1,11 @@
 // Components
-export { VariableList } from './components/VariableList.js';
+export { VariableList } from './components/VariableList';
 
 // Widgets
-export { VariablesWidget } from './widgets/VariablesWidget.js';
+export { VariablesWidget } from './widgets/VariablesWidget';
 
 // Plugins
-export { VariablesPlugin } from './plugins/VariablesPlugin.js';
+export { VariablesPlugin } from './plugins/VariablesPlugin';
 
 // Types
-export type { VariableListProps } from './components/VariableList.js';
+export type { VariableListProps } from './components/VariableList';
