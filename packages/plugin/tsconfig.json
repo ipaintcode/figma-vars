@@ -11,15 +11,19 @@
     "outDir": "dist",
     "rootDir": "src",
     "baseUrl": ".",
-    "composite": true,
+    "composite": false,
     "declaration": true,
-    "paths": {
-      "@figma-vars/core": ["../core/dist"]
-    }
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ]
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"],
-  "references": [
-    { "path": "../core" }
-  ]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.d.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
 }

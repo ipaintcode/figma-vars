@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsup';
+import { defineConfig } from 'tsup'
 
 export default defineConfig({
   entry: {
@@ -16,7 +16,9 @@ export default defineConfig({
     }
   },
   treeshake: true,
+  external: ['react', 'react-dom', '@figma-vars/core', '@figma/plugin-typings'],
   esbuildOptions(options) {
     options.target = 'es2020'
+    options.jsx = 'automatic'
   }
-});
+})

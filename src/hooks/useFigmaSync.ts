@@ -13,10 +13,10 @@ const useFigmaSync = (fileKey: string) => {
   // Fetch variables from Figma
   const fetchVariables = useCallback(async () => {
     console.log(localVariables)
-    setSyncStatus(s => ({ ...s, isSyncing: true }));
+    setSyncStatus(s => ({ ...s, isSyncing: true }));œ
     const url = `https://api.figma.com/v1/files/${fileKey}/variables`;
 
-    try {
+    try {q
       const response = await fetch(url, {
         headers: {
           'X-FIGMA-TOKEN': token,

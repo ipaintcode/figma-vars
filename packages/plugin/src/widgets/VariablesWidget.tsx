@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { FigmaClient, Variable } from '@figma-vars/core'
 import { VariableList } from '../components/VariableList.js'
+import { getEnvVar } from '../utils/env.js'
 
 export const VariablesWidget: React.FC = () => {
   const [variables, setVariables] = useState<Variable[]>([])
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    const client = new FigmaClient(process.env.FIGMA_ACCESS_TOKEN || '')
+    const client = new FigmaClient(getEnvVar('FIGMA_ACCESS_TOKEN'))
     const fileId = window.location.pathname.split('/').pop() || ''
 
     async function loadVariables() {

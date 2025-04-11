@@ -1,47 +1,59 @@
 {
   "name": "@figma-vars/core",
   "version": "0.1.0",
-  "description": "Core functionality for Figma Variables API.",
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/types/index.d.ts",
+  "description": "Core functionality for working with Figma variables",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
     "./plugin": {
-      "types": "./dist/plugin/plugin.d.ts",
-      "import": "./dist/plugin/plugin.js",
-      "require": "./dist/plugin/plugin.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     }
   },
+  "sideEffects": false,
+  "license": "MIT",
   "files": [
-    "dist"
+    "dist/**"
   ],
   "scripts": {
     "build": "rimraf dist && tsc --outDir dist/types --declaration --emitDeclarationOnly && tsup",
     "dev": "tsup --watch",
-    "clean": "rimraf dist",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "lint": "eslint \"src/**/*.ts*\"",
     "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "rimraf": "^5.0.5",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/figma-vars.git",
+    "directory": "packages/core"
   },
   "keywords": [
     "figma",
     "variables",
-    "design-tokens",
-    "api"
+    "design",
+    "design-system",
+    "tokens",
+    "design-tokens"
   ],
-  "author": "Your Name",
-  "license": "MIT",
-  "dependencies": {
-    "@figma/plugin-typings": "^1.82.0"
-  },
-  "devDependencies": {
-    "@types/node": "^20.17.30",
-    "rimraf": "^5.0.5",
-    "tsup": "^8.0.2",
-    "typescript": "^5.3.3"
-  }
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ]
 }

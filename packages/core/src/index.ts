@@ -1,5 +1,5 @@
 // API
-export { FigmaClient } from './api.js';
+export { FigmaClient, TokenProvider, envTokenProvider } from './api.js';
 
 // Core functionality
 export * from './variables.js';
