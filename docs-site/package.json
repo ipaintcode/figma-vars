@@ -12,7 +12,9 @@
   },
   "devDependencies": {
     "vue": "^3.4.15",
-    "vitepress": "^1.0.0-rc.44"
+    "vitepress": "^1.0.0-rc.44",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.19"
   },
   "pnpm": {
     "peerDependencyRules": {

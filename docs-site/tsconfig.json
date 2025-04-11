@@ -5,12 +5,14 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [".vitepress/*"]
-    }
+    },
+    "types": ["vite/client"]
   },
   "include": [
     ".vitepress/**/*.ts",
     ".vitepress/**/*.d.ts",
     ".vitepress/**/*.tsx",
-    ".vitepress/**/*.vue"
+    ".vitepress/**/*.vue",
+    "**/*.md"
   ]
 }
