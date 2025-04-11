@@ -45,7 +45,10 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: |
+          pnpm install --frozen-lockfile
+          cd docs-site
+          pnpm install --frozen-lockfile
 
       - name: Build docs
         working-directory: docs-site
