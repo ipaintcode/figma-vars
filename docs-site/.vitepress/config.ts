@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Figma Variables",
   description: "Modern library for working with Figma variables",
-  base: '/figma-vars/',
+  base: '/',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
