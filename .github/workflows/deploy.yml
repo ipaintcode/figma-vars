@@ -40,7 +40,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
       - name: Install dependencies
-        run: pnpm install
+        run: |
+          pnpm install
+          cd docs-site && pnpm install
       - name: Build
         run: cd docs-site && pnpm run build
       - name: Setup Pages
