@@ -11,5 +11,6 @@
     "declaration": true,
     "sourceMap": true
   },
+  "include": ["packages/**/*.ts", "packages/**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }
