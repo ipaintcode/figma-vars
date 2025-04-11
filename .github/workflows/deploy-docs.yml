@@ -45,15 +45,11 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: |
-          pnpm install
-          cd docs-site
-          pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build docs
-        run: |
-          cd docs-site
-          pnpm run build
+        working-directory: docs-site
+        run: pnpm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
