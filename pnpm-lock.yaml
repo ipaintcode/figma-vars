@@ -64,6 +64,10 @@ importers:
         version: 6.2.6(@types/node@20.17.30)
 
   packages/core:
+    dependencies:
+      '@figma/rest-api-spec':
+        specifier: ^0.27.0
+        version: 0.27.0
     devDependencies:
       eslint:
         specifier: ^8.54.0
@@ -1884,6 +1888,10 @@ packages:
   /@figma/plugin-typings@1.109.0:
     resolution: {integrity: sha512-6l628rOQGNd5ZD3Bru36/NK+PSKmHpsrWz0NMwUYZ8AIyfIl6sCJRc8+OhAy9+WkDXq/Dx3BYiBStjmCJ8O3Lw==}
     dev: true
+
+  /@figma/rest-api-spec@0.27.0:
+    resolution: {integrity: sha512-jRGYwBLdybit9X7puOmztx8XUt1dq9a7jtBO2KEK4OrxP8GKGX5yY2+efV/XNRHnqTbzFue0qdZklSBs/EaGNw==}
+    dev: false
 
   /@hapi/hoek@9.3.0:
     resolution: {integrity: sha512-/c6rf4UJlmHlC9b5BaNvzAcFv7HZ2QHaV0D4/HNlBdvFnvQq8RI4kYdhyPCl7Xj+oWvTWQ8ujhqS53LIgAe6KQ==}
