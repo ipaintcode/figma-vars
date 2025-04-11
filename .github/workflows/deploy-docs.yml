@@ -49,6 +49,7 @@ jobs:
           pnpm install --frozen-lockfile
           cd docs-site
           pnpm install --frozen-lockfile
+          pnpm add -D vitepress
 
       - name: Build docs
         working-directory: docs-site
